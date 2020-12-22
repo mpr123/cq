@@ -96,8 +96,12 @@ GET _analyze
 IK分词器安装思路
 
 1. 访问https://github.com/medcl/elasticsearch-analysis-ik/releases
+
 2. 找到对应的ik安装包并下载
+
 3. 解压安装包，并把解压的文件打成 tar包(elasticsearch容器中只能使用 tar 命令)
+
+   注：ik分词器要和es的版本一样
 
 
 其他docker环境安装
