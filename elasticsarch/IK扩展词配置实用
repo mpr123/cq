@@ -1,0 +1,50 @@
+对IK分词器的词进行扩展，增强分词功能：
+GET _analyze
+{
+  "analyzer": "ik_smart",
+  "text": "川普连任失败"
+}
+
+川普没有正常分词
+
+
+需要对IK分词器IKAnalyzer.cfg.xml进行配置
+<comment>IK Analyzer 扩展配置</comment>
+<!--用户可以在这里配置自己的扩展字典 -->
+<entry key="ext_dict"></entry>
+ <!--用户可以在这里配置自己的扩展停止词字典-->
+<entry key="ext_stopwords"></entry>
+<!--用户可以在这里配置远程扩展字典 -->
+<!-- <entry key="remote_ext_dict">words_location</entry> -->
+<!--用户可以在这里配置远程扩展停止词字典-->
+<!-- <entry key="remote_ext_stopwords">words_location</entry> -->
+
+
+1. 编写分词字典，就是把需要扩展的分词放到文本文件中
+vi test.dic
+添加分词内容：
+川普
+拜登
+
+多个词回车处理
+
+2. 把字典复制到es容器中的以下路径
+/usr/share/elasticsearch/plugins/ik/config
+
+3. 把IKAnalyzer.cfg.xml配置进行修改，添加自己的扩展词字典
+<entry key="ext_dict">test.dic</entry>
+
+
+参考命令：
+
+# 进入容器
+docker exec -it elasticsearch /bin/bash
+# 复制文件到容器中
+docker cp test.dic elasticsearch:/
+# 动态查看容器的日志
+docker logs -f --tail 100 elasticsearch
+# 重启容器
+docker restart elasticsearch
+
+
+
