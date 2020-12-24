@@ -1,0 +1,31 @@
+MySQL   5.6 5.7     MySQL 8.0.20
+
+
+1. 驱动
+MySQL   5.6 5.7   ：可以使用  com.mysql.jdbc.Driver(老版)  也可以使用com.mysql.cj.jdbc.Driver(最新)
+MySQL   8         ：只能使用  com.mysql.cj.jdbc.Driver(最新)
+
+2. 连接
+MySQL   5.6 5.7   ：随便连  jdbc:mysql:///mp     jdbc:mysql:///mp?serverTimezone=Asia/Shanghai
+MySQL   8         ：必须包括时区设置  jdbc:mysql:///mp?serverTimezone=Asia/Shanghai   或者：serverTimezone=UTC
+这三种配置效果基本上一样：jdbc:mysql:///mp? jdbc:mysql://localhost:3306/mp? jdbc:mysql://127.0.0.1:3306/mp?
+
+3. 密码加密方式
+MySQL8升级了对用户访问密码的加密方式，和原来的MySQL5.6  MySQL5.7  都不一样
+所以连接MySQL8的时候，使用的客户端，最好是最新版的，能够支持MySQL8最新的加密方式
+
+
+
+
+建议大家使用新版MySQL
+1. 性能不一样  ?
+2. 功能更强大
+3. 更流行
+
+
+
+
+
+
+
+
