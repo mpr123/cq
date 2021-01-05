@@ -106,25 +106,33 @@ IK分词器安装思路
 
 其他docker环境安装
 
+```shell
 docker run -id --name mysql \
 -v /mnt/mysql_h/data:/var/lib/mysql \
 -v /mnt/mysql_h/conf:/etc/mysql/conf.d \
 --restart=always -p 3306:3306 \
 -e MYSQL_ROOT_PASSWORD=inasdX74O5sqTFcy23QG5vHhW mysql:8.0.18
+```
 
-
+```shell
 docker run -id --name zookeeper \
 --restart=always -p 2188:2181 zookeeper:3.4.14
+```
 
-
+```shell
 docker run -id --name redis \
 --restart=always -p 6379:6379 \
 redis:5.0.9 --appendonly yes --requirepass "inX97LOt5qTFy234Q8dGc5vH2W"
+```
 
-
+```shell
 docker run -id --name rabbitmq \
 -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest \
 --restart=always -p 15672:15672 -p 5672:5672 rabbitmq:3.7.8-management
+```
 
+```shell
 docker run --env MODE=standalone --name nacos -d \
 -p 8848:8848 nacos/nacos-server:1.2.0
+```
+
