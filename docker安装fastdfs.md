@@ -49,7 +49,7 @@ nobody     100  0.0  0.0  33036  2116 ?        S    14:15   0:00 nginx: worker p
 root       118  0.0  0.0  11272   728 pts/1    S+   14:54   0:00 grep --color=auto nginx
 ```
 
-<image>https://github.com/mpr123/cq/blob/main/img/image-20200308225704946.png</image>
+![image-20200308225704946](img/image-20200308225704946.png)
 
 添加以下内容
 
