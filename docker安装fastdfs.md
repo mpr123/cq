@@ -23,8 +23,8 @@ docker run -d --name storage --net=host -e TRACKER_IP=<your tracker server addre
 docker run -d --name storage --net=host -e TRACKER_IP=192.168.200.130:22122 -e GROUP_NAME=group1 morunchang/fastdfs sh storage.sh
 ```
 
-- 使用的网络模式是–net=host, <your tracker server address> 替换为你机器的Ip即可  
-- <group name> 是组名，即storage的组  
+- 使用的网络模式是–net=host, < your tracker server address > 替换为你机器的Ip即可  
+- < group name > 是组名，即storage的组  
 - 如果想要增加新的storage服务器，再次运行该命令，注意更换 新组名
 
 ### 4 修改nginx的配置  
